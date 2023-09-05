@@ -6,7 +6,8 @@ const { errorHandler } = require("./middleware/errorHandler");
 
 
 app.use(express.json());
-app.use("/current",require('./routes/currentRoutes'));  //defines the route for the current weather
+app.use("/current",require('./routes/currentRoutes'));
+app.use("/forecast",require('./routes/forecastRoutes')); 
 app.use(errorHandler);
 
 const port = process.env.PORT || 5001;
