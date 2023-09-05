@@ -12,7 +12,17 @@ const getCurrentWeather = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("Weather not found");
     }
-    res.status(200).json(response.data);
+    const data = {
+        "location" : response.data.location.name,
+        "country" : response.data.location.country,
+        "wind_speed(mph)": response.data.current.wind_mph,
+        "wind_speed(kph)": response.data.current.wind_kph,
+        "wind_degree": response.data.current.wind_degree,
+        "wind_dir": response.data.current.wind_dir,
+        "humidity": response.data.current.humidity,
+        "preciptation(in)": response.data.current.precip_in,
+    }
+    res.status(200).json(data);
 });
 
 module.exports = {getCurrentWeather};
