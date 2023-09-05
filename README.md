@@ -1,2 +1,2 @@
 # weather-forecast-api
- Implemented a REST API to access weather forecasts.
+ Implemented a API to get weather forecasts and sports Event Details.
