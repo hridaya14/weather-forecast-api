@@ -1,4 +1,4 @@
-const { constants }   = require("../jsonFiles/errorConstants");
+const { constants }   = require("../constants/errorConstants");
 
 const errorHandler = (err,req,res,next) =>{
     const statusCode = res.statusCode ? res.statusCode : 500;
