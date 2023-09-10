@@ -2,6 +2,10 @@ const asyncHandler = require("express-async-handler");
 const axios = require("axios");
 const {dateCheck} = require("../middleware/dateChecker");
 
+
+// @desc get past Weather
+// @GET /history
+// @access User
 const getHistory = asyncHandler(async (req, res) => {
     const date = new Date(`${req.query.dt}`);
     if (!dateCheck('history', date)) {

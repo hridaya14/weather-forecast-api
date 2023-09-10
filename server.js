@@ -1,6 +1,6 @@
 const express = require('express');
 const {connectDb} = require("./config/dbConfig");
-//connectDb();
+connectDb();
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorHandler");
 
@@ -11,6 +11,7 @@ app.use(express.json());
 app.use("/current",require('./routes/currentRoutes'));
 app.use("/forecast",require('./routes/forecastRoutes'));
 app.use("/history",require('./routes/historyRoutes'));
+app.use("/user",require('./routes/userRoutes'));
 app.use(errorHandler);
 
 const port = process.env.PORT || 5001;

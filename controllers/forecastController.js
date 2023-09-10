@@ -1,6 +1,10 @@
 const asyncHandler = require("express-async-handler");
 const axios = require("axios");
 
+
+// @desc get forecast on Weather
+// @GET /forecast
+// @access User
 const getForecastWeather = asyncHandler(async (req, res) => {
     const query = req.query.query;
     const days = req.query.days;
