@@ -7,5 +7,6 @@ const dateCheck = (route,date) => {
         case 'history':
             return (date >= cutoffDates.history);
     }
+    next();
 }
 module.exports  = {dateCheck};
