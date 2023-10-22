@@ -9,7 +9,6 @@ const app = express();
 
 app.use(express.json());
 app.use("/user",require('./routes/userRoutes'));
-
 app.use("/current",require('./routes/currentRoutes'));
 app.use("/forecast",require('./routes/forecastRoutes'));
 app.use("/history",require('./routes/historyRoutes'));

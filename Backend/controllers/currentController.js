@@ -1,5 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const axios = require("axios");
+const dotenv = require("dotenv");
+dotenv.config();
 
 
 // @desc get current Weather
@@ -7,6 +9,7 @@ const axios = require("axios");
 // @access User
 const getCurrentWeather = asyncHandler(async (req, res) => {
     const {query} = req.query;
+    console.log("h1");
     if (!query) {
         res.status(400);
         throw new Error("Enter a Query");
@@ -16,6 +19,7 @@ const getCurrentWeather = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("Weather not found");
     }
+    console.log("h2");
     const data = {
         "location" : response.data.location.name,
         "country" : response.data.location.country,
