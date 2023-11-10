@@ -1,15 +1,23 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import axios from 'axios';
 
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  async function fetchData() {
-    const response  =  await fetch('http:localhost:3000/current?query=paris').then(res => res.json()).then(data => console.log(res.body));
-    
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/current?query=paris');
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
+  }
+  
+  
   return (
     <>
       <div>

@@ -5,6 +5,8 @@ const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorHandler");
 const {tokenAuthenticator} = require("./middleware/tokenAuthenticator");
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 
 app.use(express.json());
