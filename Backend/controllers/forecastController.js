@@ -7,12 +7,11 @@ const axios = require("axios");
 // @access User
 const getForecastWeather = asyncHandler(async (req, res) => {
     const query = req.query.query;
-    const days = req.query.days;
     if (!query) {
         res.status(400);
         throw new Error("Enter a Query");
     }
-    const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${query}&days=${days}`);
+    const response = await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${query}?unitGroup=metric&key=${process.env.WEATHER_API_KEY}`);
     if (!response) {
         res.status(404);
         throw new Error("Weather not found");

@@ -9,7 +9,6 @@ dotenv.config();
 // @access User
 const getCurrentWeather = asyncHandler(async (req, res) => {
     const {query} = req.query;
-    console.log("h1");
     if (!query) {
         res.status(400);
         throw new Error("Enter a Query");
@@ -19,16 +18,21 @@ const getCurrentWeather = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("Weather not found");
     }
-    console.log("h2");
+    
     const data = {
+        "temperature": response.data.current.temp_c,
         "location" : response.data.location.name,
         "country" : response.data.location.country,
-        "wind_speed(mph)": response.data.current.wind_mph,
-        "wind_speed(kph)": response.data.current.wind_kph,
+        "wind_speed": response.data.current.wind_mph,
+        "wind_speed": response.data.current.wind_kph,
         "wind_degree": response.data.current.wind_degree,
         "wind_dir": response.data.current.wind_dir,
         "humidity": response.data.current.humidity,
-        "preciptation(in)": response.data.current.precip_in,
+        "preciptation": response.data.current.precip_in,
+        "pressure": response.data.current.pressure_mb,
+        "condition": response.data.current.condition.text,
+        "logo": response.data.current.condition.icon,
+        "feels_like": response.data.current.feelslike_c,
     }
     res.status(200).json(data);
 });

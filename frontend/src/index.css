@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* .parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: full;
+    height: 4rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    color: white
+    
+}
+
+.child1{
+    display:flex;
+    align-items: center;
+    place-items: center;
+}
+
+.div{
+
+} */
+
+.desktopNav  {
+    display: none;
+}
+
+@media screen and (min-width: 1025px) {
+    .desktopNav{
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, #09090A 6.25%, #09090A 44.26%, #09090A 44.27%, #09090A 75.52%);
+        align-items: center;
+        margin-left: 2.5rem;
+        border-radius: 1.5625rem;
+        width: 5rem;
+        height: 80vh;
+    }
+  }
+
+@media screen and (min-width:1025px){
+    .nav{
+        display:flex;
+        flex-direction : row;
+    }
+}
+
+.searchRec{
+    z-index: 400;
+}
+
+
+.linear-gradient{
+    border-radius: 1.5625rem;
+    border: 1px solid #171313;
+    background: linear-gradient(180deg, #1B1C1D 17.71%, rgba(26, 27, 29, 0.00) 77.08%);
+}
+
+
+body{
+    
+    color: white;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+}
+
+.sun{
+    border-radius: 0.9375rem;
+    border: 1px solid #171313;
+    background: #1B1C1E;
+}
+  
