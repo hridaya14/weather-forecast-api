@@ -1,10 +1,11 @@
-import { locationState, forecastWeatherState } from "../../../Atoms/location";
+import { locationState, forecastWeatherState, currentWeatherState } from "../../../Atoms/location";
 import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 
-const WeatherCard = ({ weather }) => {
+const WeatherCard = () => {
   const location = useRecoilValue(locationState);
   const forecast = useRecoilValue(forecastWeatherState);
+  const weather = useRecoilValue(currentWeatherState);
   const [currentTime, setCurrentTime] = useState(new Date());
   
 
@@ -19,7 +20,7 @@ const WeatherCard = ({ weather }) => {
   const formattedTime = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
 
   return (
-    <div className="flex flex-col  lg:w-[23.5rem] mx-auto h-[40rem] md:h-[80vh] linear-gradient p-2 md:p-1 md:space-y-9 lg:space-y-4">
+    <div className="flex flex-col w-[90%] max-w-[35rem]  lg:w-full lg:max-w-[23.5rem] mx-auto lg:h-[80vh] linear-gradient p-2 md:p-1 md:space-y-9 lg:space-y-4">
       <div className=" text-[0.875rem] flex justify-between my-5 w-full">
         <div className=" rounded-[1.875rem] bg-white py-2 px-4 text-black mx-6">
           {location}
@@ -28,7 +29,7 @@ const WeatherCard = ({ weather }) => {
           {formattedTime}
         </div>
       </div>
-      <div className=" justify-center flex my-4  items-center mr-6 space-x-3">
+      <div className="justify-center flex my-4  items-center mr-6 space-x-3">
         <img
           src={weather ? weather.logo : ""}
           alt="weather icon"
@@ -45,7 +46,7 @@ const WeatherCard = ({ weather }) => {
         <div className=" text-[2.25rem]">°C</div>
       </div>
 
-      <div className=" flex justify-center space-x-10">
+      <div className=" flex justify-around lg:justify-center lg:space-x-10">
         <div className=" text-center my-3">
           <div className=" font-[#919192] text-[1rem] text-[#919192]">
             Feels Like

@@ -1,28 +1,13 @@
 import { atom, selector } from "recoil";
 import axios from "axios";
 
+
 export const locationState = atom({
   key: "Location",
   default: "Delhi,IN",
 });
 
-export const locationKeyState = selector({
-  key: "LocationKeyState",
-  get: async ({ get }) => {
-    const location = get(locationState);
-    try {
-      const data = await axios.get(
-        `https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/locations/v1/cities/search?apikey=kE64PGABovUaFDsmKKnDAfbyY1mcZoO9&q=${location}`
-      );
-      if (data[0]) {
-        return data[0].Key;
-      }
-    } catch (error) {
-      console.log("Error fetching key", error);
-      return null;
-    }
-  },
-});
+
 
 export const currentWeatherState = selector({
   key: "CurrentWeatherState",
@@ -57,26 +42,26 @@ export const currentWeatherState = selector({
 
 
 export const getWeatherIconPath = (condition) => {
-switch (condition.toLowerCase()) {
+switch (condition) {
   case 'snow':
-    return '/snow.png';
+    return '/icons/snow.png';
   case 'rain':
-    return '/rain.png';
+    return '/icons/rain.png';
   case 'fog':
-    return '/fog.png';
+    return '/icons/fog.png';
   case 'wind':
-    return '/wind.png';
+    return '/icons/wind.png';
   case 'cloudy':
-    return '/cloudy.png';
+    return '/icons/cloudy.png';
   case 'partly-cloudy-day':
-    return '/partly-cloudy-day.png';
+    return '/icons/partly-cloudy-day.png';
   case 'partly-cloudy-night':
-    return '/partly-cloudy-night.png';
+    return '/icons/partly-cloudy-night.png';
   case 'clear-day':
-    return '/clear-day.png';
+    return '/icons/clear-day.png';
   case 'clear-night':
-    return '/clear-night.png';
+    return '/icons/clear-night.png';
   default:
-    return '/default.png';
+    return '/icons/default.png';
 }
 };

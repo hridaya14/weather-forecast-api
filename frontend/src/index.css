@@ -82,4 +82,40 @@ body{
     border: 1px solid #171313;
     background: #1B1C1E;
 }
+
+body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+body::-webkit-scrollbar-track {
+    background: black;        
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: grey; 
+    border-radius: 20px;       
+        
+}
+
+@media screen and (min-width: 1024px){
+.weather-div{
+    border-radius: 1.5625rem;
+    border: 1px solid #171313;
+    background: linear-gradient(237deg, #000 -4.37%, rgba(35, 36, 36, 0.89) 41.76%, #232424 52.9%, rgba(35, 36, 36, 0.81) 75.75%, rgba(35, 36, 36, 0.00) 102.6%);
+    backdrop-filter: blur(50px);
+    }
+}
+
+.scroll-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-item {
+    scroll-snap-align: start;
+  }
+
+
   
