@@ -13,6 +13,7 @@ app.use(express.json());
 app.use("/current",require('./routes/currentRoutes'));
 app.use("/forecast",require('./routes/forecastRoutes'));
 app.use("/history",require('./routes/historyRoutes'));
+app.use("/city",require('./routes/cityRoute'));
 app.use(errorHandler);
 
 const port = process.env.PORT || 5001;

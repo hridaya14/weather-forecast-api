@@ -22,6 +22,11 @@ const SearchButton = () => {
     setIsFocussed(false);
   };
 
+  const handleCityClick = (city) => {
+    setLocation(city);
+    setIsFocussed(false);
+  }
+
   const handleFocus = () => {
     setIsFocussed(true);
   };
@@ -54,9 +59,7 @@ const SearchButton = () => {
       {isFocussed && (
         <div className=" absolute rounded-bl-[15px] rounded-br-[15px] \ bg-[#1A1B1D] z-10 mb-2 w-full">
           <ul className="pl-4 py-2 text-[#919192] text-lg font-bold overflow-y-scroll space-x-2 h-36 justify-start">
-            {cityList.map((city,index) => {
-              return <div onClick={() => handleCityClick(city)}>{city}</div>
-            })}
+            {cityList.map((city,index) => {return <li key={index} className="cursor-pointer hover:text-white" onClick={() => handleCityClick(city)}>{city}</li>})}
           </ul>
         </div>
       )}

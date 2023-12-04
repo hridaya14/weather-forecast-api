@@ -19,11 +19,10 @@ import {
 function App() {
   return(
     <Suspense fallback={<Loading/>}>
-    <div className=' lg:h-[100vh]'>
-      
+    <div className=' lg:h-[100vh] overflow-hidden '>
       <Router>
         <Header/>
-        <div className='flex flex-col lg:flex-row items-center'>
+        <div className='flex flex-col lg:flex-row items-center lg:h-[83vh]'>
           <Navbar/>
           <Routes>
             <Route path="/" exact element={<Search/>} />

@@ -118,4 +118,15 @@ body::-webkit-scrollbar-thumb {
   }
 
 
+.card-bg{
+    border-radius: 0.9375rem;
+    border: 1px solid #171313;
+    background: linear-gradient(180deg, #1A1B1D 99.99%, rgba(26, 27, 29, 0.00) 100%);
+    }
+
+
+
+
+
+
   

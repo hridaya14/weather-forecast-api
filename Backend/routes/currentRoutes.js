@@ -4,5 +4,4 @@ const {getCurrentWeather} = require("../controllers/currentController");
 router.route("/").get(getCurrentWeather)
 
 
-
 module.exports = router; 

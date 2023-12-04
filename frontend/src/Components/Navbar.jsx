@@ -3,7 +3,7 @@
 
 const Navbar = () => {
     return (
-        <div className=" desktopNav mx-3 ">
+        <div className=" desktopNav mx-3 mb-4">
             <a href = "/" className=" p-2 my-4 ">
                 <img src="/Logo.svg" className="h-[40px] w-[40px] "></img>
             </a>

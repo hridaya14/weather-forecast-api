@@ -1,7 +1,7 @@
 import SearchButton from "./SearchButton";
 const Header = () => {
     return(
-        <div className=" flex flex-col lg:flex-row lg:justify-between lg:align-middle lg:w-full">
+        <div className=" flex flex-col lg:flex-row lg:justify-between lg:align-middle">
             <div className="flex justify-between items-center">
                 <div className="flex p-10">
                     <img src = "/avatar.png" className="hidden lg:inline-block h-14"></img>

@@ -20,7 +20,7 @@ const WeatherCard = () => {
   const formattedTime = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
 
   return (
-    <div className="flex flex-col w-[90%] max-w-[35rem]  lg:w-full lg:max-w-[23.5rem] mx-auto lg:h-[80vh] linear-gradient p-2 md:p-1 md:space-y-9 lg:space-y-4">
+    <div className="flex flex-col w-[90%] max-w-[35rem]  lg:w-full lg:max-w-[23.5rem] mx-auto lg:h-[83vh] linear-gradient p-2 md:p-1 md:space-y-9 lg:space-y-4">
       <div className=" text-[0.875rem] flex justify-between my-5 w-full">
         <div className=" rounded-[1.875rem] bg-white py-2 px-4 text-black mx-6">
           {location}
@@ -33,7 +33,7 @@ const WeatherCard = () => {
         <img
           src={weather ? weather.logo : ""}
           alt="weather icon"
-          className=" w-[4.5rem] h-[4.5rem]"
+          className=" w-[5rem] h-[5rem]"
         />
         <div className=" text-[#919192] text-[1.25rem]">
           {weather ? weather.condition : "Loading..."}
