@@ -10,7 +10,7 @@ const Header = () => {
                     <img src = "/avatar.png" className="hidden lg:inline-block h-14"></img>
                     <div className=" pl-2 md:pl-4">
                         <div className=" text-white font-thin text-[0.8rem]  md:text-lg">Howdy,</div>
-                        <div className=" text-white font-bold text-[1.25rem] md:text-xl ">Pearl Harbour</div>
+                        <div className=" text-white font-bold text-[1.25rem] md:text-xl ">Alan Turing</div>
                     </div>
                 </div>
                 
