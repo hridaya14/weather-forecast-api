@@ -11,7 +11,6 @@ import { menuState } from './Atoms/location';
 import { Analytics } from '@vercel/analytics/react';
 import { Loading } from './Pages/Loading';
 import MobileNavbar from './Components/MobileNavbar';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   RecoilRoot,
   atom,
@@ -24,7 +23,6 @@ function App() {
   const open = useRecoilValue(menuState);
   return(
     <Suspense fallback={<Loading/>}>
-    <SpeedInsights>
     <div className=' lg:h-[100vh] overflow-hidden '>
       <Analytics/>
       <Router>
@@ -42,7 +40,6 @@ function App() {
         </div>
       </Router>      
     </div>
-    </SpeedInsights>
     </Suspense>
     
   )
