@@ -8,7 +8,7 @@ import Alerts from './Pages/Alerts/Alerts';
 import Maps from './Pages/Maps/Maps';
 import Home from './Pages/Home/Home';
 import { menuState } from './Atoms/location';
-import { Analytics } from '@vercel/analytics/react';
+
 import { Loading } from './Pages/Loading';
 import MobileNavbar from './Components/MobileNavbar';
 import { SpeedInsights } from "@vercel/speed-insights/next"
