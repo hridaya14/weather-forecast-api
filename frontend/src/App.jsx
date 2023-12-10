@@ -8,8 +8,10 @@ import Alerts from './Pages/Alerts/Alerts';
 import Maps from './Pages/Maps/Maps';
 import Home from './Pages/Home/Home';
 import { menuState } from './Atoms/location';
+import { Analytics } from '@vercel/analytics/react';
 import { Loading } from './Pages/Loading';
 import MobileNavbar from './Components/MobileNavbar';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   RecoilRoot,
   atom,
@@ -22,7 +24,9 @@ function App() {
   const open = useRecoilValue(menuState);
   return(
     <Suspense fallback={<Loading/>}>
+    <SpeedInsights>
     <div className=' lg:h-[100vh] overflow-hidden '>
+      <Analytics/>
       <Router>
         <Header/>
         <div className='flex flex-col lg:flex-row items-center lg:h-[83vh]'>
@@ -38,6 +42,7 @@ function App() {
         </div>
       </Router>      
     </div>
+    </SpeedInsights>
     </Suspense>
     
   )
