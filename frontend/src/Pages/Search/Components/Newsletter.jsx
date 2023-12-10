@@ -1,14 +1,24 @@
 
 const Newsletter = () => {
     return (
-        <div className=" relative  space-y-6 flex flex-col items-center">
-            <div className="absolute right-0 top-0"><img src = "/3dots.png" ></img></div>
-            <div>
-                <img src = "/subscribe.png" className=""></img>
-                <div className="h-[8.6rem]">
+        <div className=" hidden news relative flex-col items-center justify-center">
+                <img src = "/subscribe.png" className = "w-[14rem]"></img>
 
+                <div className=" w-[14rem] h-[10rem] subscribe-div text-left flex flex-col justify-start">
+                    <div className="flex flex-row mx-auto">
+                        <div>
+                            <h3>Stay Ahead of the</h3>
+                            <h3>Weather!</h3>
+                            <h3>Subscribe to our</h3>
+                            <h3>Newsletter</h3>
+                        </div>
+                        <div className=" flex flex-col justify-end">
+                            <img src = "/arrow.png"></img>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
+                
         </div>
     )
 }   

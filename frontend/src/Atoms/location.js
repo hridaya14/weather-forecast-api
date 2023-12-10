@@ -7,6 +7,11 @@ export const locationState = atom({
   default: "Delhi,IN",
 });
 
+export const menuState = atom({
+  key: "Menu",
+  default: false,
+});
+
 
 
 export const currentWeatherState = selector({

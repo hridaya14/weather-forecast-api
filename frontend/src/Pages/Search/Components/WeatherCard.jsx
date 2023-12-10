@@ -20,7 +20,7 @@ const WeatherCard = () => {
   const formattedTime = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
 
   return (
-    <div className="flex flex-col w-[90%] max-w-[35rem]  lg:w-full lg:max-w-[23.5rem] mx-auto lg:h-[83vh] linear-gradient p-2 md:p-1 md:space-y-9 lg:space-y-4">
+    <div className="flex flex-col w-[90%] max-w-[35rem] lg:min-w-[23.5rem] lg:max-w-[26rem] mx-auto lg:h-[83vh] linear-gradient space-y-4 p-2 md:p-1 md:space-y-9 lg:space-y-4">
       <div className=" text-[0.875rem] flex justify-between my-5 w-full">
         <div className=" rounded-[1.875rem] bg-white py-2 px-4 text-black mx-6">
           {location}
@@ -80,18 +80,18 @@ const WeatherCard = () => {
         </div>
       </div>
 
-      <div className="sun mx-4 h-[8.5rem] lg:h-[7rem] my-3 p-2 ">
+      <div className="sun mx-4 h-[8rem] lg:h-[7rem] lg:my-3 p-3 ">
         <div>
           <img src="/sunrise.svg"></img>
         </div>
-        <div className="text-[#87878B] text-[1.15rem]">Sunrise</div>
+        <div className="text-[#87878B] text-[1.75rem] md:text-[1.15rem]">Sunrise</div>
         <div className=" text-[1.5rem] ">{(forecast) ? forecast.days[0].sunrise.substring(0, 5) : ".."}</div>
       </div>
-      <div className="sun mx-4 h-[8.5rem] lg:h-[7rem] my-3 p-2 ">
+      <div className="sun mx-4 h-[8rem] lg:h-[7rem] lg:my-3 p-3 ">
         <div>
           <img src="/sunset.svg"></img>
         </div>
-        <div className="text-[#87878B] text-[1.15rem]">Sunset</div>
+        <div className="text-[#87878B] text-[1.75rem] md:text-[1.15rem]">Sunset</div>
         <div className=" text-[1.5rem] ">{(forecast) ? forecast.days[0].sunset.substring(0, 5) : ".."}</div>
       </div>
     </div>

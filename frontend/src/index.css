@@ -43,10 +43,24 @@ button:focus {
         align-items: center;
         margin-left: 2.5rem;
         border-radius: 1.5625rem;
-        width: 5rem;
-        height: 80vh;
+        min-width: 5rem;
+        height: 100%;
+        
     }
   }
+
+.mobileNav{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #09090A 6.25%, #09090A 44.26%, #09090A 44.27%, #09090A 75.52%);
+    align-items: center;
+    margin-left: 2.5rem;
+    border-radius: 1.5625rem;
+    min-width: 5rem;
+    height: 80vh;
+    backdrop-filter: blur(50px);
+    opacity: 0.8;
+}
 
 @media screen and (min-width:1025px){
     .nav{
@@ -55,8 +69,46 @@ button:focus {
     }
 }
 
+
+.carousel_card{
+    display : grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap : 1.5rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carousel_card::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    background: gray;
+}
+
+
+@media screen and (min-width: 1025px){
+    .carousel_card{
+        display : grid;
+        scroll-behavior: auto;
+        gap : 1.5rem;
+        overflow-y: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+    }
+}
+
+
+
+  
 .searchRec{
-    z-index: 400;
+    z-index: 500;
+}
+
+.searchRec2{
+    z-index: 500;
 }
 
 
@@ -97,7 +149,7 @@ body::-webkit-scrollbar-thumb {
         
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1025px){
 .weather-div{
     border-radius: 1.5625rem;
     border: 1px solid #171313;
@@ -106,14 +158,12 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-.scroll-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
+
   
   .carousel-item {
+    scroll-snap-align: start;
+  }
+  .card{
     scroll-snap-align: start;
   }
 
@@ -124,9 +174,79 @@ body::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #1A1B1D 99.99%, rgba(26, 27, 29, 0.00) 100%);
     }
 
+.subscribe-div{
+    border-radius: 0rem 0rem 0.9375rem 0.9375rem;
+    border: 1px solid #171313;
+    background: #191B1B;
+}
+h3{
+    color: #87878B;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
 
 
+@media screen and ( min-width : 1775px){
+    .news{
+        display:flex;
+        width: 35%;
+    }
+    .city{
+        width:23rem
+    }
+}
 
 
-  
+@media screen and ( min-width : 1650px) and ( max-width : 1775px){
+    .forecast{
+        width:83%;
+    }
+    .news{
+        display:flex;
+        place-items: flex-start;
+        width: 35%;
+        margin-top: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .city{
+        width:22rem;
+    }
+    
+}
+
+@media screen and ( min-width : 1536px) and ( max-width : 1649px){
+    .forecast{
+        width:75%;
+    }
+    .news{
+        display:flex;
+    }
+    .city{
+        width:18.5rem
+    }   
+}
+
+@media screen and ( min-width : 1280px) and ( max-width : 1535px){
+    .forecast{
+        width:75%;
+    }
+    .city{
+        width:20rem;
+    }
+    
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px){
+    .forecast{
+        width:60%;
+    }
+    .city{
+        width:15.5rem;
+    }
+}
+
+
