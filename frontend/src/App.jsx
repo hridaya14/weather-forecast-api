@@ -11,7 +11,6 @@ import { menuState } from './Atoms/location';
 
 import { Loading } from './Pages/Loading';
 import MobileNavbar from './Components/MobileNavbar';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   RecoilRoot,
   atom,
