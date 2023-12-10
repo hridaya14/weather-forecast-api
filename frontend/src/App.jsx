@@ -23,7 +23,6 @@ function App() {
   const open = useRecoilValue(menuState);
   return(
     <Suspense fallback={<Loading/>}>
-    <SpeedInsights>
     <div className=' lg:h-[100vh] overflow-hidden '>
       <Router>
         <Header/>
@@ -40,7 +39,6 @@ function App() {
         </div>
       </Router>      
     </div>
-    </SpeedInsights>
     </Suspense>
     
   )
