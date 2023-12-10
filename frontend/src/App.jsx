@@ -26,7 +26,6 @@ function App() {
     <Suspense fallback={<Loading/>}>
     <SpeedInsights>
     <div className=' lg:h-[100vh] overflow-hidden '>
-      <Analytics/>
       <Router>
         <Header/>
         <div className='flex flex-col lg:flex-row items-center lg:h-[83vh]'>
