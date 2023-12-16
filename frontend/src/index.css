@@ -41,9 +41,10 @@ button:focus {
         flex-direction: column;
         background: linear-gradient(180deg, #09090A 6.25%, #09090A 44.26%, #09090A 44.27%, #09090A 75.52%);
         align-items: center;
+        place-items: center;
         margin-left: 2.5rem;
         border-radius: 1.5625rem;
-        min-width: 5rem;
+        min-width: 6rem;
         height: 100%;
         
     }
@@ -197,6 +198,9 @@ h3{
     }
     .city{
         width:23rem
+    }
+    .newsletter{
+
     }
 }
 

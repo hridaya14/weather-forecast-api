@@ -19,7 +19,7 @@ const Header = () => {
             </div>
             <div className=" flex items-center justify-center mx-3 w-full lg:w-auto">
                 <SearchButton/>
-                <img src = "/Notifications.png" className=" h-[48px] w-[48px] mx-3"></img>
+                <a href = "/"><img src = "/Notifications.png" className=" h-[48px] w-[48px] mx-3"></img></a>
             </div>
         </div>
     )

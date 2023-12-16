@@ -1,10 +1,10 @@
 
 const Newsletter = () => {
     return (
-        <div className=" hidden news relative flex-col items-center justify-center">
+        <div className=" hidden news relative flex-col  justify-center">
                 <img src = "/subscribe.png" className = "w-[14rem]"></img>
 
-                <div className=" w-[14rem] h-[10rem] subscribe-div text-left flex flex-col justify-start">
+                <div className=" w-[14rem] h-[10rem] subscribe-div text-left newsletter flex flex-col justify-start">
                     <div className="flex flex-row mx-auto">
                         <div>
                             <h3>Stay Ahead of the</h3>
