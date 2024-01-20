@@ -20,7 +20,7 @@ export const currentWeatherState = selector({
     const location = get(locationState);
     try {
       const response = await axios.get(
-        `https://weatherly-canp.onrender.com/current?query=${location}`
+        `https://weather-forecast-api-production.up.railway.app/current?query=${location}`
       );
       return response.data;
     } catch (error) {
@@ -35,7 +35,7 @@ export const currentWeatherState = selector({
    get: async ({ get }) => {
      const location = get(locationState);
      try {
-        const response = await axios.get(`https://weatherly-canp.onrender.com/forecast?query=${location}`);
+        const response = await axios.get(`https://weather-forecast-api-production.up.railway.app/forecast?query=${location}`);
         const data = response.data;
         return data;
      } catch (error) {

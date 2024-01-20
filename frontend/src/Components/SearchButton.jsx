@@ -24,6 +24,7 @@ const SearchButton = () => {
 
   const handleCityClick = (city) => {
     setLocation(city);
+    setSuggestion(city); 
     setIsFocussed(false);
   }
 
