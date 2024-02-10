@@ -1,19 +1,21 @@
 const asynchandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');
 const tokenAuthenticator = asynchandler((req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-    if (!token){
+    if (!req.cookies.token) {
         res.status(401);
-        throw new Error('Not authorized to access this route');
+        throw new Error("Unauthorized");
     }
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-        if (err){
+
+    const token = req.cookies.token;
+
+    jwt.verify(token, process.env.JWT_SECRET, (error) => {
+        if (error) {
             res.status(401);
-            throw new Error('Not authorized to access this route');}
-        req.user = user;
+            throw new Error("Unauthorized");
+        }
         next();
-    });
+    })
+
 });
 
 module.exports = {tokenAuthenticator};
