@@ -3,6 +3,6 @@ const router = express.Router();
 const {getHistory} = require("../controllers/historyController");
 const { tokenAuthenticator } = require("../middleware/tokenAuthenticator");
 
-router.route("/").get(tokenAuthenticator,getHistory);
+router.route("/").get(getHistory);
 
 module.exports = router;

@@ -4,7 +4,7 @@ const {getCurrentWeather} = require("../controllers/currentController");
 const { tokenAuthenticator } = require("../middleware/tokenAuthenticator");
 
 
-router.route("/").get(tokenAuthenticator,getCurrentWeather)
+router.route("/").get(getCurrentWeather)
 
 
 module.exports = router; 
