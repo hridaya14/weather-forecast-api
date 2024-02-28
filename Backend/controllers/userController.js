@@ -64,7 +64,7 @@ const loginUser  = expressAsyncHandler(async (req, res, next) => {
     res.cookie("token", token, {httpOnly : true , maxAge : 1000000});
 
 
-    res.status(200).send("Login successful");
+    res.status(200).send({token : token , username : user.username});
 
 });
 
