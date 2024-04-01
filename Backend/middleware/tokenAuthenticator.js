@@ -6,7 +6,7 @@ const tokenAuthenticator = asynchandler((req, res, next) => {
         throw new Error("Unauthorized");
     }
 
-    const token = req.cookies.token;
+    const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
 
     jwt.verify(token, process.env.JWT_SECRET, (error) => {
         if (error) {
