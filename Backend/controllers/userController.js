@@ -68,7 +68,14 @@ const loginUser  = expressAsyncHandler(async (req, res, next) => {
 
 });
 
-module.exports = {registerUser , loginUser };
+const getUser = expressAsyncHandler(async (req, res, next) => {
+    const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await userModel.findOne({email : decoded.email});
+    res.status(200).send(user.username);
+});
+
+module.exports = {registerUser , loginUser , getUser };
 
 
 
